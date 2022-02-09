@@ -25,7 +25,7 @@ p {
 }
 
 .map { 
-    margin: 0px;  
+    left: 400px;  
     /*background-image: url("/WarCampaignMaster/images/base_terrain.png");*/
     background-repeat: no-repeat;
 }
@@ -58,4 +58,14 @@ p {
 
 tooltip:hover .player3{
     background-color: chartreuse;
+}
+
+.controlPanel {
+    visibility: hidden;
+    background-color: blue;
+    position: fixed;
+    width: 200px;
+    height: 1000px;
+    top: 0;
+    left: 0;
 }

@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <title>Document</title>
+    <title>Campaing Map</title>
 </head>
 <body>
     <div class="map"> 
-        <img src="/images/map1.png" alt="terrain"> 
+        <img src="/images/map..jpeg" alt="terrain"> 
 
         <!--all the tokens are inside map div-->
-        <div class="token player1"><h1 class="p1">P1</h1> <p class="formation" ></p>patrol<p class="strength">250</p> </div>
-        <div class="token player2"><h1 class="p2">P2</h1> <p class="formation" ></p>patrol<p class="strength">245</p> </div>
-        <div class="token player3"><h1 class="p3">P3</h1> <p class="formation" ></p>patrol<p class="strength">280</p> </div>
+        <!--<div class="token player1"><h1 class="p1">P1</h1> <p class="formation" ></p>patrol<p class="strength">250</p> </div>-->
+        <input type="button" value="" >
+
+        <button class="token player1" value="player1" name="wolves"><h1 class="p1">Wolves</h1> <p class="formation" ></p>Outraider<p class="strength">300pts</p></button>
+        <button class="token player1" value="player1" name="wolves"><h1 class="p1">Wolves</h1> <p class="formation" ></p>Patrol<p class="strength">100pts</p></button>
+        <button class="token player1" value="player1" name="wolves"><h1 class="p1">Wolves</h1> <p class="formation" ></p>Patrol<p class="strength">100pts</p></button>
+
+        <button class="token player2" value="player2" name="tau"><h1 class="p2">tau</h1> <p class="formation" ></p>battallion<p class="strength">245</p> </button>
+
+        <button class="token player3" value="player3" name="chaos"><h1 class="p3">chaos</h1> <p class="formation" ></p>patrol<p class="strength">280</p> </button>
+
+
 
         <div class="token barbs 1"><h1 class="b1">B1</h1> <p class="formation" ></p>patrol<p class="strength">150</p> </div>
         <div class="token barbs 2"><h1 class="b2">B1</h1> <p class="formation" ></p>patrol<p class="strength">100</p> </div>
     </div>
-
+    <div class="controlPanel"></div>
     <script src="main.js"></script>
 </body>
 </html>
