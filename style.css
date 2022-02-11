@@ -14,7 +14,6 @@ p {
     height: 100px;
     border-radius: 50%;
     position: absolute;
-
     color: aliceblue;
     text-align: center;
     text-align: center;
@@ -25,13 +24,16 @@ p {
 }
 
 .map { 
-    left: 400px;  
-    /*background-image: url("/WarCampaignMaster/images/base_terrain.png");*/
+    margin: 0px;  
     background-repeat: no-repeat;
 }
 
+div.map::before{
+    content: url("/WarCampaignMaster/images/map..jpeg");
+}
+
 .player1 {
-    background-color: black;
+    background-color: rgb(84, 126, 169);
     top: 60px;
     left: 50px;
 }
@@ -58,14 +60,4 @@ p {
 
 tooltip:hover .player3{
     background-color: chartreuse;
-}
-
-.controlPanel {
-    visibility: hidden;
-    background-color: blue;
-    position: fixed;
-    width: 200px;
-    height: 1000px;
-    top: 0;
-    left: 0;
 }
