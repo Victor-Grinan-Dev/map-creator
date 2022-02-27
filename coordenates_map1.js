@@ -1,9 +1,11 @@
+//alert("yo!");
+
 //dummy DATABASE
 //top values x 13 tiles
 const topValues = [0, 175, 350, 525, 700, 875, 1050, 1225, 1400, 1575, 1750, 1925, 2100]
 
 //left values per odd rows x 13 tiles
-const leftValuesOdd = [0, 200, 400, 600, 800, 100, 1200, 1400, 1600, 1800, 2000, 2200, 2400]
+const leftValuesOdd = [0, 200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400]
 
 //left values per even rows x 12 tiles
 const leftValuesEven = [100, 300, 500, 700, 900, 1100, 1300, 1500, 1700, 1900, 2100, 2300]
@@ -34,7 +36,7 @@ const tilesPosition = {
     j02: [topValues[1], leftValuesEven[8]], 
     k02: [topValues[1], leftValuesEven[9]], 
     l02: [topValues[1], leftValuesEven[10]], 
-    m02: [topValues[2], leftValuesEven[11]], 
+    m02: [topValues[1], leftValuesEven[11]], 
 
     b03: [topValues[2], leftValuesOdd[0]], 
     c03: [topValues[2], leftValuesOdd[1]], 

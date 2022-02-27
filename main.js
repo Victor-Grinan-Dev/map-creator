@@ -243,8 +243,6 @@ class Tile {
     };
 };
 
-
-
 //generate random image
 const genTileImage = () => tiles[(Math.floor(Math.random() * tiles.length) + 1) - 1];
 
@@ -270,20 +268,8 @@ for (let i = 0; i < listOfTilesObjects.length; i++){
 
     tileHtmlTag.style.top = `${listOfTilesObjects[i].top}px`
     tileHtmlTag.style.left = `${listOfTilesObjects[i].left}px`
-
-    
-    //console.log(`#${listOfTilesObjects[i].id},  ${listOfTilesObjects[i].top}px, ${listOfTilesObjects[i].left}px`, listOfTilesObjects[i].image)
 }
 
 const displayEvent = (event) => console.log(event.path)
 
 map.addEventListener("click", displayEvent)
-
-
-
-
-
-
-
-
-

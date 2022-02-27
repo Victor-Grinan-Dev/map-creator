@@ -23,15 +23,36 @@ p {
     padding: 0;
 }
 
-/*div.map::before{
-    background-repeat: no-repeat;
-    content: url("/WarCampaignMaster/images/vectorial_map.png");
-}*/
+#controlPanel {
+    
+    background-color: antiquewhite;
+    position: fixed;
+    width: 800px;
+    height: 110px;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
+}
+
+#genMap {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    
+}
+
+.actionBtn {
+    width: 50px;
+    height: 50px;  
+}
 
 /*MAP DIV*/
 .map{
     position: absolute;
+    top: 150px;
 }
 
 .tinyMap {
@@ -98,6 +119,8 @@ p {
     height: 235px;
     position: absolute;
 }
+
+
 
 
 /*HARCODED COORDENADES (NOT made odd-even difference)*/
