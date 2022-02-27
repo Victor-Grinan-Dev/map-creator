@@ -10,22 +10,43 @@
 </head>
 <body>
     <div class="controlPanel" id="controlPanel">
+        <form>
+            <div>
+                <label for="x">X</label>
+                <input type="number" min="3" max="13" value="5" id="x">
+            </div>
+    
+            <div>
+                <label for="x">Y</label>
+                <input type="number" min="3" max="13" value="5" id="y">
+            </div>
 
+            <select>
+                <option value="square">square</option>
+                <!--
+                    <option value="hexagonal">hexagonal</option>
+                    <option value="square">diamond</option>
+                -->
+
+            </select>
+        </form>
+
+        
         <button id="genMap"><h3>Generate</h3><h3>New Map</h3> </button>
 
         
-            <button class="actionBtn">action</button>
-            <button class="actionBtn">action</button>
-            <button class="actionBtn">action</button>
-            <button class="actionBtn">action</button>
-            <button class="actionBtn">action</button>
-            <button class="actionBtn">action</button>
-            <button class="actionBtn">action</button>
-            <button class="actionBtn">action</button>
-            <button class="actionBtn">action</button>
-            <button class="actionBtn">action</button>
-            <button class="actionBtn">action</button>
-            <button class="actionBtn">action</button>
+            <button class="actionBtn">item</button>
+            <button class="actionBtn">item</button>
+            <button class="actionBtn">item</button>
+            <button class="actionBtn">item</button>
+            <button class="actionBtn">item</button>
+            <button class="actionBtn">item</button>
+            <button class="actionBtn">item</button>
+            <button class="actionBtn">item</button>
+            <button class="actionBtn">item</button>
+            <button class="actionBtn">item</button>
+            <button class="actionBtn">item</button>
+            <button class="actionBtn">item</button>
 
     </div>
     <div class="map tinyMap" id="map"> 
@@ -50,15 +71,12 @@
         <img src="/WarCampaignMaster/images/hills.png.png" id="tile8"class="tile" alt="tileImage"></img>
         -->
         
-        <!--
-            <img src="${listOfObjects[i].image}" id="tile${i}"class="tile" alt="tileImage"></img>
-        -->
 
         <!--all the tokens are inside map div-->
-        <div class="token player1"><h1 class="p1">SW</h1> <p class="formation" ></p>patrol<p class="strength">90</p> </div>
-        <div class="token player2"><h1 class="p2">Tau</h1> <p class="formation" ></p>patrol<p class="strength">80</p> </div>
+        <div class="token player1 invisible"><h1 class="p1">SW</h1> <p class="formation" ></p>patrol<p class="strength">90</p> </div>
+        <div class="token player2 invisible" ><h1 class="p2 invisible">Tau</h1> <p class="formation" ></p>patrol<p class="strength">80</p> </div>
         
-        <div class="token barbs 1"><h5 class="b1">renegades</h5> <p class="formation"></p>patrol<p class="strength">105</p> </div>
+        <div class="token barbs invisible"><h5 class="b1">renegades</h5> <p class="formation"></p>patrol<p class="strength">105</p> </div>
         
     </div>
 

@@ -1,5 +1,4 @@
 //alert("yo!");
-
 //dummy DATABASE
 //top values x 13 tiles
 const topValues = [0, 175, 350, 525, 700, 875, 1050, 1225, 1400, 1575, 1750, 1925, 2100]
@@ -205,6 +204,26 @@ const allTilesMap = [
     "g13", "h13", "i13", "j13", "k13", "l13", "m13", "n13", "o13", "p13", "q13", "r13", "s13",
 ]
 
+const tilesByRows = {
+    row1:["a01", "b01", "c01", "d01", "e01", "f01", "g01", "h01", "i01", "j01", "k01", "l01", "m01",],
+    row2:["b02", "c02", "d02", "e02", "f02", "g02", "h02", "i02", "j02", "k02", "l02", "m02",],
+    row3:["b03", "c03", "d03", "e03", "f03", "g03", "h03", "i03", "j03", "k03", "l03", "m03", "n03",],
+    row4:["c04", "d04", "e04", "f04", "g04", "h04", "i04", "j04", "k04", "l04", "m04", "n04",],
+    row5:["c05", "d05", "e05", "f05", "g05", "h05", "i05", "j05", "k05", "l05", "m05", "n05", "o05",],
+    row6:["d06", "e06", "f06", "g06", "h06", "i06", "j06", "k06", "l06", "m06", "n06", "o06",],
+    row7:["d07", "e07", "f07", "g07", "h07", "i07", "j07", "k07", "l07", "m07", "n07", "o07", "p07",],
+    row8:["e08", "f08", "g08", "h08", "i08", "j08", "k08", "l08", "m08", "n08", "o08", "p08"],
+    row9:["e09", "f09", "g09", "h09", "i09", "j09", "k09", "l09", "m09", "n09", "o09", "p09", "q09",],
+    row10:["f10", "g10", "h10", "i10", "j10", "k10", "l10", "m10", "n10", "o10", "p10", "q10",],
+    row11:["f11", "g11", "h11", "i11", "j11", "k11", "l11", "m11", "n11", "o11", "p11", "q11", "r11",],
+    row12:["g12", "h12", "i12", "j12", "k12", "l12", "m12", "n12", "o12", "p12", "q12", "r12",],
+    row13:["g13", "h13", "i13", "j13", "k13", "l13", "m13", "n13", "o13", "p13", "q13", "r13", "s13",],   
+}
+
+    
+
+
+
 const testMap = [
     "a01", "b01", "c01",
     "b02", "c02",
@@ -246,30 +265,58 @@ class Tile {
 //generate random image
 const genTileImage = () => tiles[(Math.floor(Math.random() * tiles.length) + 1) - 1];
 
+const mapDimensions = () => {
 
-const map = document.querySelector("#map")
+    const x = document.querySelector("#x").value;
+    const y = document.querySelector("#y").value;
+    console.log(x)
+    const map = []
 
-
-const listOfTilesObjects = [];
-
-const currentMap = allTilesMap;
-
-for (let i = 0; i < currentMap.length; i++){
-    const tileId = currentMap[i]
-    const currentTilePosition = tilesPosition[`${tileId}`]
-    const newTileObject = new Tile(tileId, genTileImage(), currentTilePosition)
-    listOfTilesObjects.push(newTileObject)  
+    for (let i = 1; i <= y; i++){
+        let currentObject = tilesByRows[`row${i}`];
+        //console.log(currentObject)
+        if (i % 2 === 0){
+            for (let j = 0; j < (x - 1); j++){
+               
+                map.push(currentObject[j])
+            }
+        }else{
+            for (let j = 0; j < x; j++){
+                    
+                map.push(currentObject[j])
+            }
+        }
+        
+    }
+    
+    return map;
 }
 
-for (let i = 0; i < listOfTilesObjects.length; i++){
-    map.innerHTML += `<img src="${listOfTilesObjects[i].image}" id="${listOfTilesObjects[i].id}" class="tile" alt="tileImage"></img>`
-
-    const tileHtmlTag = document.querySelector(`#${listOfTilesObjects[i].id}`);
-
-    tileHtmlTag.style.top = `${listOfTilesObjects[i].top}px`
-    tileHtmlTag.style.left = `${listOfTilesObjects[i].left}px`
+const generateNewMap = () => {
+    const mapCanvas = document.querySelector("#map")
+    const listOfTilesObjects = [];   
+    const currentMap = mapDimensions();
+    
+    for (let i = 0; i < currentMap.length; i++){
+        const tileId = currentMap[i];
+        const currentTilePosition = tilesPosition[`${tileId}`]
+        const newTileObject = new Tile(tileId, genTileImage(), currentTilePosition)
+        listOfTilesObjects.push(newTileObject)  
+    }
+    mapCanvas.innerHTML = "";
+    for (let i = 0; i < listOfTilesObjects.length; i++){
+        mapCanvas.innerHTML += `<img src="${listOfTilesObjects[i].image}" id="${listOfTilesObjects[i].id}" class="tile" alt="tileImage"></img>`
+    
+        const tileHtmlTag = document.querySelector(`#${listOfTilesObjects[i].id}`);
+    
+        tileHtmlTag.style.top = `${listOfTilesObjects[i].top}px`
+        tileHtmlTag.style.left = `${listOfTilesObjects[i].left}px`
+    }
+    
+    const displayEvent = (event) => console.log(event.path)
+    
+    map.addEventListener("click", displayEvent)
 }
 
-const displayEvent = (event) => console.log(event.path)
 
-map.addEventListener("click", displayEvent)
+const genBtn = document.querySelector("#genMap").addEventListener("click", generateNewMap);

@@ -121,7 +121,9 @@ p {
 }
 
 
-
+.invisible {
+    display: none;
+}
 
 /*HARCODED COORDENADES (NOT made odd-even difference)*/
 /*
