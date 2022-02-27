@@ -1,5 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+
+    background-color: black;
+}
+
 h1 {
     margin: 1px;
+    padding: 0px;
+}
+
+h5 {
+    margin-top: 20px;
     padding: 0px;
 }
 
@@ -9,6 +23,42 @@ p {
     padding: 0;
 }
 
+/*div.map::before{
+    background-repeat: no-repeat;
+    content: url("/WarCampaignMaster/images/vectorial_map.png");
+}*/
+
+
+/*MAP DIV*/
+.map{
+    position: absolute;
+}
+
+.tinyMap {
+    /*3x5*//*(X;Y)*/  
+    height: 600px;
+    width: 1000px;
+}
+
+.smallMap {
+    /*5x7*//*(X;Y)*/  
+    height: 1000px;
+    width: 1400px;
+}
+
+.midMap {
+    /*9x11*//*(X;Y)*/
+    width: 1800px;
+    height: 2200px;
+}
+
+.bigMap {
+    /*13x17*//*(X;Y)*/
+    width: 2600px;
+    height: 3400px;
+}
+
+/*TOKENS*/
 .token {
     width: 100px;
     height: 100px;
@@ -21,43 +71,400 @@ p {
     margin-bottom: 0;
     padding-top: 1;
     padding-bottom: 1;
-}
-
-.map { 
-    margin: 0px;  
-    background-repeat: no-repeat;
-}
-
-div.map::before{
-    content: url("/WarCampaignMaster/images/map..jpeg");
+    z-index: 1;
 }
 
 .player1 {
     background-color: rgb(84, 126, 169);
-    top: 60px;
+    top: 65px;
     left: 50px;
 }
 
 .player2 {
-    background-color: black;
-    top: 800px;
-    left: 1535px;
+    background-color: rgb(180, 125, 52);
+    top: 235px;
+    left: 350px;
 }
-
-.player3 {
-    background-color: black;
-    top: 600px;
-    left: 790px;
-}
-
 
 .barbs {
     background-color: rgb(100, 11, 11);
-    top: 800px;
-    left: 885px;
+    top: 415px;;
+    left: 50px;
+}
+
+/*TILES*/
+.tile {
+    width: 200px;
+    height: 235px;
+    position: absolute;
 }
 
 
-tooltip:hover .player3{
-    background-color: chartreuse;
+/*HARCODED COORDENADES (NOT made odd-even difference)*/
+/*
+#tile0 {  
+    width: 200px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
+
+
+#tile1 { 
+    width: 200px;
+    position: absolute;
+    top: 0px;
+    left: 200px;
+}
+
+#tile2 {    
+    width: 200px;
+    position: absolute;
+    top: 0px;
+    left: 400px;
+}
+
+#tile3 {    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 100px;
+}
+
+#tile4 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 300px;
+}
+
+#tile5 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 500px;
+}
+
+#tile6 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 350px;
+    left: 0px;
+}
+
+#tile7 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 350px;
+    left: 200px;
+}
+
+#tile8 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 350px;
+    left: 400px;
+}
+
+#tile9 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 300px;
+}
+
+#tile10 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 350px;
+    left: 0px;
+}
+
+#tile11 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 100px;
+}
+
+#tile12 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 700px;
+    left: 0px;
+}
+
+#tile13 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 525px;
+    left: 100px;
+}
+
+#tile14 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 300px;
+}
+
+#tile15 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 350px;
+    left: 0px;
+}
+
+
+#tile16 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 100px;
+}
+
+#tile17 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 700px;
+    left: 0px;
+}
+
+#tile18 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 525px;
+    left: 100px;
+}
+
+#tile19 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 300px;
+}
+
+#tile20 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 350px;
+    left: 0px;
+}
+
+#tile21 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 100px;
+}
+
+#tile22 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 700px;
+    left: 0px;
+}
+
+#tile23 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 525px;
+    left: 100px;
+}
+
+#tile24 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 300px;
+}
+
+#tile25 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 350px;
+    left: 0px;
+}
+
+#tile26 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 100px;
+}
+
+#tile27 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 700px;
+    left: 0px;
+}
+
+#tile28 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 525px;
+    left: 100px;
+}
+
+#tile29 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 300px;
+}
+
+#tile30 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 350px;
+    left: 0px;
+}
+
+#tile31 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 100px;
+}
+
+#tile32 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 700px;
+    left: 0px;
+}
+
+#tile33 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 525px;
+    left: 100px;
+}
+
+#tile34 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 300px;
+}
+
+#tile35 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 350px;
+    left: 0px;
+}
+
+#tile36 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 100px;
+}
+/*
+#tile37 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 700px;
+    left: 0px;
+}
+
+#tile38 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 525px;
+    left: 100px;
+}
+
+#tile39 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 300px;
+}
+
+#tile40 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 350px;
+    left: 0px;
+}
+
+#tile41 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 100px;
+}
+
+#tile42 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 700px;
+    left: 0px;
+}
+
+#tile43 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 525px;
+    left: 100px;
+}
+
+#tile44 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 175px;
+    left: 300px;
+}
+
+#tile45 { 
+    
+    width: 200px;
+    position: absolute;
+    top: 350px;
+    left: 0px;
+}
+*/

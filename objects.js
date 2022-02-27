@@ -39,17 +39,48 @@ class User {
 
 class map {
 
-    constructor (named, image, coordinates){
+    constructor (named, listOfTilesObjects = null){
+
+        if (listOfTilesObjects){
+            "follow the tiles given"
+        }else{
+            this.createMap = function () {
+                console.log("Map on the making")
+           }
+        }
+        
         this.named = named;
         this.image = image; //url
-        this.coords = coordinates; //dictionary of all the top.left px of the image
+        this.shape = shape;
+        this.x = x;
+        this.y = y;
+        this.coords = {}; //object of all the top.left px of the 
     }
 }
 
-const map = {
-    named:unknown,
-    image:"image.url",
-    tiles:[{
-        a1:(100, 100), a2:(150, 150), a2:(150, 150)
-    }]
-}
+class Tile {
+
+    constructor (id, image, position){ //, passable = Boolean, energyEnter = Number, energyExit = Number, modifyAttributes = Array){
+        this.id = id;
+        this.image = image; //url string
+        this.topLeftCoords = position; //top, left object coords
+        this.top = this.topLeftCoords[0];
+        this.left = this.topLeftCoords[1];
+
+        //OTHER GAME ATTRIBUTES:
+        //this.passable = passable; 
+        //this.energyEnter = energyEnter;
+        //this.energyExit = energyExit;
+        //this.modifyAttributes = modifyAttributes;
+    };
+};
+
+const forest = "/WarCampaignMaster/images/forest.png.png";
+const hills = "/WarCampaignMaster/images/hills.png.png";
+const mountains = "/WarCampaignMaster/images/mountains.png.png";
+const planes = "/WarCampaignMaster/images/planes.png.png";
+const swamp = "/WarCampaignMaster/images/swamp.png.png";
+
+const tiles = [forest, hills, mountains, planes, swamp];
+
+

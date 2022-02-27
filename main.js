@@ -1,9 +1,11 @@
+//alert("yo!");
+
 //dummy DATABASE
 //top values x 13 tiles
 const topValues = [0, 175, 350, 525, 700, 875, 1050, 1225, 1400, 1575, 1750, 1925, 2100]
 
 //left values per odd rows x 13 tiles
-const leftValuesOdd = [0, 200, 400, 600, 800, 100, 1200, 1400, 1600, 1800, 2000, 2200, 2400]
+const leftValuesOdd = [0, 200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400]
 
 //left values per even rows x 12 tiles
 const leftValuesEven = [100, 300, 500, 700, 900, 1100, 1300, 1500, 1700, 1900, 2100, 2300]
@@ -202,3 +204,86 @@ const allTilesMap = [
     "g12", "h12", "i12", "j12", "k12", "l12", "m12", "n12", "o12", "p12", "q12", "r12",
     "g13", "h13", "i13", "j13", "k13", "l13", "m13", "n13", "o13", "p13", "q13", "r13", "s13",
 ]
+
+const testMap = [
+    "a01", "b01", "c01",
+    "b02", "c02",
+    "b03", "c03", "d03"]
+
+const fiveByFive = [
+    "a01", "b01", "c01", "d01", "e01",
+    "b02", "c02", "d02", "e02",
+    "b03", "c03", "d03", "e03", "f03",
+    "c04", "d04", "e04", "f04",
+    "c05", "d05", "e05", "f05", "g05",
+]  
+
+const forest = "/WarCampaignMaster/images/forest.png.png";
+const hills = "/WarCampaignMaster/images/hills.png.png";
+const mountains = "/WarCampaignMaster/images/mountains.png.png";
+const planes = "/WarCampaignMaster/images/planes.png.png";
+const swamp = "/WarCampaignMaster/images/swamp.png.png";
+
+const tiles = [forest, hills, planes, swamp]; //mountains,
+
+class Tile {
+
+    constructor (id, image, position){ //, passable = Boolean, energyEnter = Number, energyExit = Number, modifyAttributes = Array){
+        this.id = id;
+        this.image = image; //url string
+        this.topLeftCoords = position; //top, left object coords
+        this.top = this.topLeftCoords[0];
+        this.left = this.topLeftCoords[1];
+
+        //OTHER GAME ATTRIBUTES:
+        //this.passable = passable; 
+        //this.energyEnter = energyEnter;
+        //this.energyExit = energyExit;
+        //this.modifyAttributes = modifyAttributes;
+    };
+};
+
+
+
+//generate random image
+const genTileImage = () => tiles[(Math.floor(Math.random() * tiles.length) + 1) - 1];
+
+
+const map = document.querySelector("#map")
+
+
+const listOfTilesObjects = [];
+
+const currentMap = allTilesMap;
+
+for (let i = 0; i < currentMap.length; i++){
+    const tileId = currentMap[i]
+    const currentTilePosition = tilesPosition[`${tileId}`]
+    const newTileObject = new Tile(tileId, genTileImage(), currentTilePosition)
+    listOfTilesObjects.push(newTileObject)  
+}
+
+for (let i = 0; i < listOfTilesObjects.length; i++){
+    map.innerHTML += `<img src="${listOfTilesObjects[i].image}" id="${listOfTilesObjects[i].id}" class="tile" alt="tileImage"></img>`
+
+    const tileHtmlTag = document.querySelector(`#${listOfTilesObjects[i].id}`);
+
+    tileHtmlTag.style.top = `${listOfTilesObjects[i].top}px`
+    tileHtmlTag.style.left = `${listOfTilesObjects[i].left}px`
+
+    
+    //console.log(`#${listOfTilesObjects[i].id},  ${listOfTilesObjects[i].top}px, ${listOfTilesObjects[i].left}px`, listOfTilesObjects[i].image)
+}
+
+const displayEvent = (event) => console.log(event.path)
+
+map.addEventListener("click", displayEvent)
+
+
+
+
+
+
+
+
+
