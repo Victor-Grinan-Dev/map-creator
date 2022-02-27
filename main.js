@@ -36,7 +36,7 @@ const tilesPosition = {
     j02: [topValues[1], leftValuesEven[8]], 
     k02: [topValues[1], leftValuesEven[9]], 
     l02: [topValues[1], leftValuesEven[10]], 
-    m02: [topValues[2], leftValuesEven[11]], 
+    m02: [topValues[1], leftValuesEven[11]], 
 
     b03: [topValues[2], leftValuesOdd[0]], 
     c03: [topValues[2], leftValuesOdd[1]], 
@@ -218,11 +218,11 @@ const fiveByFive = [
     "c05", "d05", "e05", "f05", "g05",
 ]  
 
-const forest = "/WarCampaignMaster/images/forest.png.png";
-const hills = "/WarCampaignMaster/images/hills.png.png";
-const mountains = "/WarCampaignMaster/images/mountains.png.png";
-const planes = "/WarCampaignMaster/images/planes.png.png";
-const swamp = "/WarCampaignMaster/images/swamp.png.png";
+const forest = "/images/forest.png.png";
+const hills = "/images/hills.png.png";
+const mountains = "/images/mountains.png.png";
+const planes = "/images/planes.png.png";
+const swamp = "/images/swamp.png.png";
 
 const tiles = [forest, hills, planes, swamp]; //mountains,
 
