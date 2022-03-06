@@ -1,52 +1,56 @@
+/* Universal reset */
 * {
     margin: 0;
     padding: 0;
 }
+/*a*/
+/*b*/
 body{
 
     background-color: black;
 }
-
+/*c*/
+/*d*/
+/*f*/
+/*g*/
+/*h*/
 h1 {
     margin: 1px;
-    padding: 0px;
+    padding: 0;
 }
 
 h5 {
     margin-top: 20px;
-    padding: 0px;
-}
-
-p {
-    margin-top: 1px;
-    margin-bottom: 1px;
     padding: 0;
 }
-
-#controlPanel {
-    
-    background-color: antiquewhite;
-    position: fixed;
-    width: 800px;
-    height: 110px;
-    z-index: 2;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-
+/*i*/
+/*j*/
+/*k*/
+/*l*/
+/*m*/
+/*n*/
+/*o*/
+/*p*/
+p {
+    margin-bottom: 1px;
+    margin-top: 1px;  
+    padding: 0;
 }
-
-#genMap {
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-    
-}
-
+/*q*/
+/*r*/
+/*s*/
+/*t*/
+/*u*/
+/*v*/
+/*w*/
+/*x*/
+/*y*/
+/*z*/
+/* classes */
 .actionBtn {
+    height: 50px;
     width: 50px;
-    height: 50px;  
+      
 }
 
 /*MAP DIV*/
@@ -92,7 +96,7 @@ p {
     margin-bottom: 0;
     padding-top: 1;
     padding-bottom: 1;
-    z-index: 1;
+    z-index: 2;
 }
 
 .player1 {
@@ -118,12 +122,45 @@ p {
     width: 200px;
     height: 235px;
     position: absolute;
+    z-index: 0;
 }
 
 
 .invisible {
     display: none;
 }
+
+/* ids */
+#controlPanel {   
+    background-color: antiquewhite;
+    position: fixed;
+    width: 800px;
+    height: 110px;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#genMap {
+    width: 100px;
+    height: 100px;
+    margin: 5px;   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*HARCODED COORDENADES (NOT made odd-even difference)*/
 /*

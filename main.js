@@ -188,22 +188,6 @@ const tilesPosition = {
 }
 
 //13x13
-const allTilesMap = [
-    "a01", "b01", "c01", "d01", "e01", "f01", "g01", "h01", "i01", "j01", "k01", "l01", "m01",
-    "b02", "c02", "d02", "e02", "f02", "g02", "h02", "i02", "j02", "k02", "l02", "m02",
-    "b03", "c03", "d03", "e03", "f03", "g03", "h03", "i03", "j03", "k03", "l03", "m03", "n03",
-    "c04", "d04", "e04", "f04", "g04", "h04", "i04", "j04", "k04", "l04", "m04", "n04",
-    "c05", "d05", "e05", "f05", "g05", "h05", "i05", "j05", "k05", "l05", "m05", "n05", "o05",
-    "d06", "e06", "f06", "g06", "h06", "i06", "j06", "k06", "l06", "m06", "n06", "o06", 
-    "d07", "e07", "f07", "g07", "h07", "i07", "j07", "k07", "l07", "m07", "n07", "o07", "p07", 
-    "e08", "f08", "g08", "h08", "i08", "j08", "k08", "l08", "m08", "n08", "o08", "p08",
-    "e09", "f09", "g09", "h09", "i09", "j09", "k09", "l09", "m09", "n09", "o09", "p09", "q09",
-    "f10", "g10", "h10", "i10", "j10", "k10", "l10", "m10", "n10", "o10", "p10", "q10",
-    "f11", "g11", "h11", "i11", "j11", "k11", "l11", "m11", "n11", "o11", "p11", "q11", "r11",
-    "g12", "h12", "i12", "j12", "k12", "l12", "m12", "n12", "o12", "p12", "q12", "r12",
-    "g13", "h13", "i13", "j13", "k13", "l13", "m13", "n13", "o13", "p13", "q13", "r13", "s13",
-]
-
 const tilesByRows = {
     row1:["a01", "b01", "c01", "d01", "e01", "f01", "g01", "h01", "i01", "j01", "k01", "l01", "m01",],
     row2:["b02", "c02", "d02", "e02", "f02", "g02", "h02", "i02", "j02", "k02", "l02", "m02",],
@@ -220,10 +204,6 @@ const tilesByRows = {
     row13:["g13", "h13", "i13", "j13", "k13", "l13", "m13", "n13", "o13", "p13", "q13", "r13", "s13",],   
 }
 
-    
-
-
-
 const testMap = [
     "a01", "b01", "c01",
     "b02", "c02",
@@ -237,11 +217,31 @@ const fiveByFive = [
     "c05", "d05", "e05", "f05", "g05",
 ]  
 
-const forest = "/images/forest.png.png";
-const hills = "/images/hills.png.png";
-const mountains = "/images/mountains.png.png";
-const planes = "/images/planes.png.png";
-const swamp = "/images/swamp.png.png";
+const testHexMap3 = [
+        "b01", "c01", "d01",
+    "b02", "d02", "c02", "e02",
+"b03", "c03", "d03", "e03", "f03", 
+    "c04", "d04", "e04", "f04", 
+        "d05", "e05", "f05",  
+]
+
+
+const testHexMap4 = [
+            "c01", "d01", "e01", "f01",
+        "d02", "c02", "e02", "f02", "g02", 
+    "c03", "d03", "e03", "f03", "g03", "h03",
+"c04", "d04", "e04", "f04", "g04", "h04", "i04",
+    "d05", "e05", "f05",  "g05", "h05", "i05", 
+        "e06", "f06", "g06", "h06", "i06", 
+            "f07", "g07", "h07", "i07" 
+]
+
+
+const forest = "images/forest.png.png";
+const hills = "images/hills.png.png";
+const mountains = "images/mountains.png.png";
+const planes = "images/planes.png.png";
+const swamp = "images/swamp.png.png";
 
 const tiles = [forest, hills, planes, swamp]; //mountains,
 
@@ -320,3 +320,5 @@ const generateNewMap = () => {
 
 
 const genBtn = document.querySelector("#genMap").addEventListener("click", generateNewMap);
+
+
