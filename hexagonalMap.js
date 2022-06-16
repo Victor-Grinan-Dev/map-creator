@@ -17,90 +17,39 @@ const testHexMap4 = [
             "f07", "g07", "h07", "i07" 
 ]
 
-const generateNewHexagonalMap = (side = 6, tile = " O ") => {
+const HexagonalMap = (side = 6, tile = " O ") => {
     
     const width = side * 3 - 2;
     const height = side * 2 - 1;
-    const tile_size  = tile.length(); //count the chars in tile
+    const tile_size  = tile.length;
     const empty = " " * tile_size;
     let rule = side ;
     let hex = [];
     return "hex!"
+		
+    for (let x = 0; x < height; x++){
+
+        if (x < side)
+		    rule -= 1
+	    else{
+            rule += 1
+        }
+
+	    let line = [];
+        for (let y = 0; y < width; y++){
+            if (y < rule || y >= width - rule){
+                line.push(empty);
+            }else{
+                line.push(tile);
+            }
+        }
+
+        hex.push(line);
+
+    }
+
+    return hex;
+
 }
+hexMap = HexagonalMap();
 
-generateNewHexagonalMap()
-
-/*
-from math import ceil
-
-
-
-hex = []
-
-tile_size = len(tile)
-empty = " " * tile_size
-gap = ""
-
-if len(tile) >= 3:
-	gap += "\n" * ceil(tile_size / 3)
-
-def create_line():
-	line = []
-	for y in range(width):
-		if y < rule:
-			line.append(empty)
-		elif y >= width - rule:
-			line.append(empty)
-		else:
-			line.append(tile)
-	return line
-		
-for x in range(height):
-
-	if x < side:
-		rule -= 1
-	else:
-		rule += 1
-	
-	new_line = create_line()
-	hex.append(new_line)
-
-		
-for hexline in hex:
-		for item in hexline:
-			print(item, end="")
-		print(gap)
-		
-print()		
-		
-side = 6
-rule = side
-height = side * 2 -1
-width = side * 3 - 2
-hex = []
-		
-for x in range(height):
-
-	if x < side:
-		rule -= 1
-	else:
-		rule += 1
-	
-	line = []
-	for y in range(width):
-		if y < rule:
-			line.append("   ")
-		elif y >= width - rule:
-			line.append("   ")
-		else:
-			line.append(" 0 ")
-			
-	hex.append(line)
-
-		
-for hexline in hex:
-		for item in hexline:
-			print(item, end="")
-		print("\n")
-
-*/
