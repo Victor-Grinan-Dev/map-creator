@@ -9,7 +9,7 @@ const testHexMap3 = [
 
 const testHexMap4 = [
             "c01", "d01", "e01", "f01",
-        "d02", "c02", "e02", "f02", "g02", 
+        "c02", "d02", "e02", "f02", "g02", 
     "c03", "d03", "e03", "f03", "g03", "h03",
 "c04", "d04", "e04", "f04", "g04", "h04", "i04",
     "d05", "e05", "f05",  "g05", "h05", "i05", 
@@ -17,65 +17,90 @@ const testHexMap4 = [
             "f07", "g07", "h07", "i07" 
 ]
 
-const generateNewHexagonalMap = (rows) => {
-    let width = (2 * rows) - 1;
-    let l = rows;
-    for (let i = 1; i < rows; i++){
-        for (let j = 0; j < 3 * rows; j++){
-            if ( j > length && j <= width){
-                console.log("*");
-            }else{
-                console.log(" "); 
-            }
-            console.log("\n"); 
-        }
-    }
-
-    for (let i = 0; i < rows; i++) {
-
-    }
-
-
-
+const generateNewHexagonalMap = (side = 6, tile = " O ") => {
+    
+    const width = side * 3 - 2;
+    const height = side * 2 - 1;
+    const tile_size  = tile.length(); //count the chars in tile
+    const empty = " " * tile_size;
+    let rule = side ;
+    let hex = [];
+    return "hex!"
 }
 
-
-generateNewHexagonalMap(3)
+generateNewHexagonalMap()
 
 /*
-int main(void)
-{
-    int length, i=0, j=0, k, l;
-    printf("Please enter the length for the sides of the hexagon:");    
-    scanf("%d", &length);
- 
-    for(i = 1, k=length, l=2*length-1; i<length; i++, k--, l++)
-    {
-        for(j = 0; j < 3*length; j++)
-        {
-            if(j>=k && j<=l)
-            {
-                printf("*");
-            }
- 
-            else
-                printf(" ");
-        }
-                printf("\n");
-    }
-             
-    for(i = 0, k=1, l=3*length-2; i<length; i++, k++, l--)
-        {
-            for(j=0; j<3*length;j++)
-            {
-                if(j>=k && j<=l)
-                    printf("*");
-                else
-                    printf(" ");
-            }
-            printf("\n");
-        }
-         
- 
-}
+from math import ceil
+
+
+
+hex = []
+
+tile_size = len(tile)
+empty = " " * tile_size
+gap = ""
+
+if len(tile) >= 3:
+	gap += "\n" * ceil(tile_size / 3)
+
+def create_line():
+	line = []
+	for y in range(width):
+		if y < rule:
+			line.append(empty)
+		elif y >= width - rule:
+			line.append(empty)
+		else:
+			line.append(tile)
+	return line
+		
+for x in range(height):
+
+	if x < side:
+		rule -= 1
+	else:
+		rule += 1
+	
+	new_line = create_line()
+	hex.append(new_line)
+
+		
+for hexline in hex:
+		for item in hexline:
+			print(item, end="")
+		print(gap)
+		
+print()		
+		
+side = 6
+rule = side
+height = side * 2 -1
+width = side * 3 - 2
+hex = []
+		
+for x in range(height):
+
+	if x < side:
+		rule -= 1
+	else:
+		rule += 1
+	
+	line = []
+	for y in range(width):
+		if y < rule:
+			line.append("   ")
+		elif y >= width - rule:
+			line.append("   ")
+		else:
+			line.append(" 0 ")
+			
+	hex.append(line)
+
+		
+for hexline in hex:
+		for item in hexline:
+			print(item, end="")
+		print("\n")
+
 */

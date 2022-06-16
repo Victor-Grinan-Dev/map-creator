@@ -2,6 +2,12 @@
 
 //dummy DATABASE
 //top values x 13 tiles
+
+const fillCoors = () => {
+    
+}
+
+
 const topValues = [0, 175, 350, 525, 700, 875, 1050, 1225, 1400, 1575, 1750, 1925, 2100]
 
 //left values per odd rows x 13 tiles
